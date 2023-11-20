@@ -86,6 +86,7 @@ const SocialPlatform = ({
                 : "border-gray bg-lightgray fill-black",
             )}
             value={value}
+            aria-label={name}
           >
             {icon}
           </RadioGroup.Item>
