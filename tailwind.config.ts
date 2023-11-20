@@ -17,6 +17,11 @@ const config: Config = {
       lightgray: "#bebebe",
       white: "#ffffff",
     },
+    extend: {
+      boxShadow: {
+        ai: "0 2px 8px 0 rgba(33, 33, 33, 0.1)",
+      },
+    },
   },
   plugins: [],
 };
