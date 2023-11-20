@@ -1,12 +1,15 @@
 import * as React from "react";
 
-interface ContainerProps extends React.PropsWithChildren {}
+import clsx from "clsx";
 
-const Container = ({ children, ...props }: React.PropsWithChildren) => {
+interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {}
+
+const Container = ({ className, ...props }: ContainerProps) => {
   return (
-    <div className="w-full sm:max-w-3xl mx-auto p-6" {...props}>
-      {children}
-    </div>
+    <div
+      className={clsx("w-full sm:max-w-3xl mx-auto p-6", className)}
+      {...props}
+    />
   );
 };
 
