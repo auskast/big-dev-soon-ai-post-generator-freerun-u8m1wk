@@ -29,22 +29,33 @@ const styles: { name: string; value: string }[] = [
   },
 ];
 
-interface StyleSelectorProps {}
+interface StyleSelectorProps {
+  onChange?: (value: string) => void;
+}
 
-const StyleSelector = ({ ...props }: StyleSelectorProps) => {
+const StyleSelector = ({ onChange }: StyleSelectorProps) => {
   const [selected, setSelected] = React.useState<string>();
+  const fieldId = React.useId();
+
+  const handleChange = React.useCallback(
+    (value: string) => {
+      setSelected(value);
+      onChange?.(value);
+    },
+    [onChange],
+  );
 
   return (
     <fieldset>
-      <h2 id="post-style" className="header2 mb-2">
+      <label htmlFor={fieldId} className="header2 inline-block mb-2">
         Post style
-      </h2>
+      </label>
       <RadioGroup.Root
-        className="flex gap-2"
+        id={fieldId}
         name="style"
-        onValueChange={setSelected}
+        className="flex flex-wrap gap-2"
+        onValueChange={handleChange}
         required
-        aria-labelledby="post-style"
       >
         {styles.map(({ name, value }) => (
           <Selector
@@ -52,6 +63,7 @@ const StyleSelector = ({ ...props }: StyleSelectorProps) => {
             name={name}
             value={value}
             selected={selected === value}
+            required
           />
         ))}
       </RadioGroup.Root>

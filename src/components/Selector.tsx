@@ -1,13 +1,12 @@
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import clsx from "clsx";
 
-interface SelectorProps {
+interface SelectorProps extends RadioGroup.RadioGroupItemProps {
   name: string;
-  value: string;
   selected: boolean;
 }
 
-const Selector = ({ name, value, selected }: SelectorProps) => {
+const Selector = ({ name, selected, ...props }: SelectorProps) => {
   return (
     <RadioGroup.Item
       className={clsx(
@@ -16,7 +15,7 @@ const Selector = ({ name, value, selected }: SelectorProps) => {
           ? "border-green bg-lightgreen/16 text-green"
           : "border-lightgray",
       )}
-      value={value}
+      {...props}
     >
       {name}
     </RadioGroup.Item>
