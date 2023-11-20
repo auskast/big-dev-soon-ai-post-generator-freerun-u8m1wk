@@ -47,6 +47,7 @@ const SocialPlatforms = ({}: SocialPlatformsProps) => {
       <RadioGroup.Root
         className="flex gap-2"
         name="platform"
+        required
         onValueChange={setSelected}
         aria-labelledby="social-platform"
       >

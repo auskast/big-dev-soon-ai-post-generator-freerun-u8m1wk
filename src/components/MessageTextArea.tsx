@@ -25,6 +25,7 @@ const MessageTextArea = ({ ...props }: MessageTextAreaProps) => {
         placeholder="e.g. How to escape tutorial hell"
         rows={3}
         maxLength={MAX_MESSAGE_LENGTH}
+        required
         onChange={(event) => setCharacterCount(event.target.value.length)}
         aria-labelledby="your-message"
       />
