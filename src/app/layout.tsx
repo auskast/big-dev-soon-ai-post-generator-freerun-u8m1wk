@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
+import clsx from "clsx";
+
 import "./globals.css";
 
-const poppinsRegular = Poppins({ subsets: ["latin"], weight: "400" });
-const poppinsMedium = Poppins({ subsets: ["latin"], weight: "500" });
-const poppinsSemibold = Poppins({ subsets: ["latin"], weight: "600" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
   title: "BigDevSoon - AI Post Generator Project",
@@ -21,15 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={[
-          poppinsRegular.className,
-          poppinsMedium.className,
-          poppinsSemibold.className,
-        ].join(" ")}
-      >
-        {children}
-      </body>
+      <body className={clsx("body1", poppins.className)}>{children}</body>
     </html>
   );
 }
