@@ -40,7 +40,6 @@
   .textarea {
     @apply px-4 py-2 rounded-lg border border-solid shadow-ai;
     @apply body2 border-lightgray bg-white text-black placeholder:text-black/32;
-    @apply focus:outline outline-1 -outline-offset-1 outline-green;
-    @apply focus:shadow-green;
+    @apply focus:outline outline-1 -outline-offset-1 outline-green focus:shadow-green/10;
   }
 }

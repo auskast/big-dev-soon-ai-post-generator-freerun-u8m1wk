@@ -40,12 +40,15 @@ const SocialPlatforms = ({}: SocialPlatformsProps) => {
   const [selected, setSelected] = React.useState<string>();
 
   return (
-    <section className="mt-16">
-      <h2 className="header2 mb-4">Social platform</h2>
+    <fieldset>
+      <h2 id="social-platform" className="header2 mb-4">
+        Social platform
+      </h2>
       <RadioGroup.Root
         className="flex gap-2"
         name="platform"
         onValueChange={setSelected}
+        aria-labelledby="social-platform"
       >
         {platforms.map(({ name, value, icon }) => (
           <SocialPlatform
@@ -57,7 +60,7 @@ const SocialPlatforms = ({}: SocialPlatformsProps) => {
           />
         ))}
       </RadioGroup.Root>
-    </section>
+    </fieldset>
   );
 };
 
