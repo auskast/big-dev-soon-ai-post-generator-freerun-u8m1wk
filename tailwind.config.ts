@@ -6,7 +6,18 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    colors: {
+      black: "#000000",
+      "black/64": "rgba(0, 0, 0, 0.64)",
+      "black/32": "rgba(0, 0, 0, 0.32)",
+      green: "#43a047",
+      "lightgreen/16": "rgba(165, 214, 167, 0.16)",
+      gray: "#939393",
+      lightgray: "#bebebe",
+      white: "#ffffff",
+    },
+  },
   plugins: [],
 };
 export default config;

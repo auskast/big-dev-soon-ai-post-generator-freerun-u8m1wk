@@ -1,3 +1,11 @@
+import { Container } from "@/components/Container";
+
 export default function Home() {
-  return <main className="flex justify-center p-10">AI Post Generator</main>;
+  return (
+    <main>
+      <Container>
+        <h1 className="header1 text-center">Generate your post</h1>
+      </Container>
+    </main>
+  );
 }
