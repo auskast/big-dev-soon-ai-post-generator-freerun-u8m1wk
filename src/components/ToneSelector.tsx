@@ -4,9 +4,11 @@ import * as React from "react";
 
 import * as RadioGroup from "@radix-ui/react-radio-group";
 
+import type { RequestData } from "@/app/api/generate/route";
+
 import { Selector } from "./Selector";
 
-const tones: { name: string; value: string }[] = [
+const tones: { name: string; value: RequestData["tone"] }[] = [
   {
     name: "Polite",
     value: "polite",

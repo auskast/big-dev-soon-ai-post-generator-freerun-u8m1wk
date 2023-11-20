@@ -12,7 +12,7 @@ const RequestData = zfd.formData({
     "polite",
     "funny",
     "friendly",
-    "informational",
+    "informal",
     "serious",
     "optimistic",
     "motivational",
@@ -20,7 +20,7 @@ const RequestData = zfd.formData({
   style: z.enum(["work", "opinion", "case study", "story", "tutorial"]),
 });
 
-type RequestData = z.infer<typeof RequestData>;
+export type RequestData = z.infer<typeof RequestData>;
 
 export async function POST(req: Request) {
   const validation = RequestData.safeParse(await req.formData());

@@ -6,12 +6,18 @@ import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 
+import type { RequestData } from "@/app/api/generate/route";
+
 import { FacebookIcon } from "./icons/FacebookIcon";
 import { LinkedinIcon } from "./icons/LinkedinIcon";
 import { RedditIcon } from "./icons/RedditIcon";
 import { TwitterIcon } from "./icons/TwitterIcon";
 
-const platforms: { name: string; value: string; icon: React.ReactNode }[] = [
+const platforms: {
+  name: string;
+  value: RequestData["platform"];
+  icon: React.ReactNode;
+}[] = [
   {
     name: "Facebook",
     value: "facebook",
