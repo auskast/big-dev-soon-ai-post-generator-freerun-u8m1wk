@@ -34,22 +34,33 @@ const platforms: { name: string; value: string; icon: React.ReactNode }[] = [
   },
 ];
 
-interface SocialPlatformsProps {}
+interface SocialPlatformsProps {
+  onChange?: (value: string) => void;
+}
 
-const SocialPlatforms = ({}: SocialPlatformsProps) => {
+const SocialPlatforms = ({ onChange }: SocialPlatformsProps) => {
   const [selected, setSelected] = React.useState<string>();
+  const fieldId = React.useId();
+
+  const handleChange = React.useCallback(
+    (value: string) => {
+      setSelected(value);
+      onChange?.(value);
+    },
+    [onChange],
+  );
 
   return (
     <fieldset>
-      <h2 id="social-platform" className="header2 mb-4">
+      <label htmlFor={fieldId} className="header2 inline-block mb-4">
         Social platform
-      </h2>
+      </label>
       <RadioGroup.Root
-        className="flex gap-2"
+        id={fieldId}
         name="platform"
+        className="flex gap-2"
         required
-        onValueChange={setSelected}
-        aria-labelledby="social-platform"
+        onValueChange={handleChange}
       >
         {platforms.map(({ name, value, icon }) => (
           <SocialPlatform

@@ -30,11 +30,11 @@
   .button {
     font-size: 18px;
     line-height: normal;
-    @apply font-medium rounded-lg p-3 bg-green text-white;
+    @apply font-medium rounded-lg p-3 bg-green text-white transition-colors;
   }
 
   .button-locked {
-    @apply bg-gray cursor-wait;
+    @apply bg-gray cursor-not-allowed;
   }
 
   .textarea {
