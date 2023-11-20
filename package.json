@@ -20,6 +20,8 @@
     "*.{js,jsx,ts,tsx}": "eslint --cache"
   },
   "dependencies": {
+    "@radix-ui/react-radio-group": "^1.1.3",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "clsx": "^2.0.0",
     "next": "14.0.3",
     "react": "^18",
