@@ -30,16 +30,60 @@
   .button {
     font-size: 18px;
     line-height: normal;
-    @apply font-medium rounded-lg p-3 bg-green text-white transition-colors;
+    @apply font-medium rounded-lg p-3 border border-solid border-lightgray text-black transition-colors;
+    @apply disabled:text-black/32 disabled:cursor-not-allowed;
+
+    & > svg {
+      @apply fill-black;
+    }
+
+    &:disabled > svg {
+      @apply fill-black/32;
+    }
   }
 
-  .button-locked {
-    @apply bg-gray cursor-not-allowed;
+  .button-primary {
+    @apply border-green bg-green text-white;
+    @apply disabled:border-gray disabled:bg-gray disabled:text-white;
+
+    & > svg {
+      @apply fill-white;
+    }
+
+    &:disabled > svg {
+      @apply fill-white;
+    }
   }
 
   .textarea {
     @apply px-4 py-2 rounded-lg border border-solid shadow-ai;
     @apply body2 border-lightgray bg-white text-black placeholder:text-black/32;
     @apply focus:outline outline-1 -outline-offset-1 outline-green focus:shadow-green/10;
+  }
+
+  .typewriter {
+    @apply overflow-hidden border-e-[0.15em] border-solid border-black pe-[2px];
+    animation:
+      typing 4s steps(40) 1s 1 normal both,
+      blink-caret 600ms step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      @apply border-black;
+    }
   }
 }

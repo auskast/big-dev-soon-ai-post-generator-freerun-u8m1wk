@@ -118,8 +118,8 @@ const SocialPlatform = ({
             side="bottom"
             sideOffset={4}
           >
-            <Tooltip.Arrow />
             {name}
+            <Tooltip.Arrow />
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
